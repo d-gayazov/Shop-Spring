@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="stylePetShop.css">
+    <meta charset="UTF-8">
+    <title>Интернет-магазин "Пушистик"</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Интернет-магазин зоотоваров "Пушистик"</h1>
+    </div>
+
+    <div id="headImg">
+        <img th:src="@{/images/fonZ1.jpg}" alt="" height="240" width="1500"/>
+    </div>
+
+    <div id="navigate">
+        <input type="search" id="searchField" placeholder="Поиск">
+        <button id="crtTab" onclick="find()">Поиск</button>
+        <button id="crtTab" style="margin-left: 550px;"><a href="?action=cart">&#128722; Корзина товаров</a></button>
+        <button id="crtTab"><a href="/forAdmin">Вход для админа</a></button>
+    </div>
+
+    <div id="left">
+        <div id="catalogue">
+            <p>Каталог товаров</p>
+            <ul>
+                <li><a class="goods" href="/shopGoodCatalog/1">Корм для животных</a></li><br>
+                <li><a class="goods" href="/shopGoodCatalog/2">Товары для груминга</a></li><br>
+                <li><a class="goods" href="/shopGoodCatalog/3">Товары для гигиены</a></li><br>
+                <li><a class="goods" href="/shopGoodCatalog/4">Игрушки для животных</a></li><br>
+                <li><a class="goods" href="/shopGoodCatalog/5">Товары для прогулки</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="content">
+    </div>
+
+    <div class="clear"></div>
+
+    <div id="footer">
+        <h3>
+            <a class="info" href="/shopInfo/1">О магазине</a>
+            <a class="info" href="/shopInfo/2">Наши контакты</a>
+            <a class="info" href="/shopInfo/3">Доставка и оплата</a>
+            <a class="info" href="/shopInfo/4">Возврат товара</a>
+        </h3>
+    </div>
+
+
+</div>
+</body>
+</html>

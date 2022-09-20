@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" th:href="@{/stylePetShop.css}"/>
+    <meta charset="UTF-8">
+    <title>Интернет-магазин "Пушистик"</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+        <h1>Интернет-магазин зоотоваров "Пушистик"</h1>
+    </div>
+
+    <div id="headImg">
+        <img th:src="@{/images/fonZ1.jpg}" alt="" height="240" width="1500"/>
+    </div>
+    <div id="crt">
+        <button id="crtTab"><a href="/">Вернуться назад</a></button>
+        <button id="crtTab"><a href="?action=cart">&#128722; Корзина товаров</a></button>
+
+        <h3></h3>
+    </div>
+    <div id="contentWind">
+        <div th:each="good : ${goods}">
+        <p id="contentGood">
+        <figure>
+            <a th:href="'/good/' + ${good.id}"><img th:src="@{'/images/'+${good.photo}}" alt="" width="200"/></a>
+            <figcaption><span th:text="${good.title}"></span><span id="gPrice" th:text="${good.price} + 'руб.'"></span>
+            </figcaption>
+            <div id="butAdd"><a th:href="'/cart/' + ${good.id}">&#128722;</a></div>
+        </figure></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
